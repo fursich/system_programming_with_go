@@ -1,0 +1,2 @@
+New file content2
+Appended content

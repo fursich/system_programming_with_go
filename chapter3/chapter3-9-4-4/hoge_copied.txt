@@ -1,0 +1,6 @@
+HTTP/1.1 2
+
+<<<<HOGE hoge HOGE!!>>>>
+
+00 OK
+Dat

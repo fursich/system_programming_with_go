@@ -1,0 +1,27 @@
+package main
+
+import (
+	"fmt"
+	"runtime"
+	"sync"
+)
+
+func main() {
+	var count int
+
+	pool := sync.Pool{
+		New: func() interface{} {
+			count++
+			return fmt.Sprintf("created: %d", count)
+		},
+	}
+
+	pool.Put("manually added :1")
+	pool.Put("manually added :2")
+	pool.Put("manually added :3")
+	fmt.Println(pool.Get())
+	fmt.Println(pool.Get())
+	runtime.GC()
+	fmt.Println(pool.Get())
+	fmt.Println(pool.Get())
+}

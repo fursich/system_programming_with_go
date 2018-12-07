@@ -1,0 +1,1 @@
+GOPATH=/ godoc -http ":6060" -analysis type
